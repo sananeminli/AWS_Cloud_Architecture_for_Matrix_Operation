@@ -5,4 +5,5 @@ This repository consisty flask app running on ec2, python code that running on l
 
 
 
-![last_arch](https://user-images.githubusercontent.com/57816597/209660066-e408f41e-93fa-45cc-82b5-04bccb8c6d8f.png)
+![real](https://user-images.githubusercontent.com/57816597/210939317-d7a08507-2272-4067-8151-a1df343dea17.png)
+
