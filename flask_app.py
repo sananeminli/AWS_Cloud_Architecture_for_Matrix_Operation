@@ -6,12 +6,13 @@ import random
 app = Flask(__name__)
 access_key = ''
 secret_key = ''
+bucket_name = ''
 s3_client = boto3.resource('s3',aws_access_key_id=access_key,aws_secret_access_key= secret_key)
 
 @app.route('/api/matrix', methods=['POST'])
 def matrix_api():
     #  URL for the matrix calculation API
-    url = 'https://wpp6mku2z9.execute-api.eu-central-1.amazonaws.com/default/matrix_calculation'
+    url = 'amazonaws.com/default/matrix_calculation'
 
     # Read in the matrix from the request payload
     matrix_file = request.files['matrix_file']
@@ -42,7 +43,7 @@ def matrix_api():
 
         
 
-        s3_client.meta.client.upload_file('matrix.txt', 'newbucket565', 'result'+str(random.randint(0,200))+'.txt')
+        s3_client.meta.client.upload_file('matrix.txt', bucket_name, 'result'+str(random.randint(0,200))+'.txt')
 
         return jsonify({'success': True})
     else:
